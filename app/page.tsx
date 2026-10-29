@@ -145,7 +145,7 @@ export default function HomePage() {
 
       <section
         id="home"
-        className="relative flex min-h-[760px] items-center overflow-hidden pb-16 pt-32 sm:min-h-[800px]"
+        className="relative flex min-h-[760px] items-center overflow-hidden pb-16 pt-28 sm:min-h-[800px] sm:pt-32"
       >
         <div className="hero-grid absolute inset-0" />
 
@@ -153,19 +153,19 @@ export default function HomePage() {
 
         <div className="pointer-events-none absolute -left-32 bottom-0 h-80 w-80 rounded-full bg-pink-300/[.08] blur-[100px]" />
 
-        <div className="container relative grid items-center gap-14 lg:grid-cols-[1.2fr_.8fr]">
-          <div>
+        <div className="container relative grid items-center gap-10 lg:grid-cols-[1.2fr_.8fr] lg:gap-14">
+          <div className="w-full overflow-hidden">
             {/* Status Badge with Radar Pulse Effect */}
-            <div className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-4 py-2 text-sm font-medium text-emerald-300 backdrop-blur-md transition-all hover:border-emerald-500/50">
-              <span className="relative flex h-2.5 w-2.5">
+            <div className="mb-6 inline-flex max-w-full items-center gap-2 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-3.5 py-1.5 text-xs font-medium text-emerald-300 backdrop-blur-md transition-all hover:border-emerald-500/50 sm:text-sm">
+              <span className="relative flex h-2.5 w-2.5 shrink-0">
                 <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-emerald-400 opacity-75" />
                 <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-emerald-500" />
               </span>
-              Open to Collaboration & New Opportunities
+              <span className="truncate">Open to Collaboration & New Opportunities</span>
             </div>
 
             {/* Kicker Text with Animated Letters */}
-            <p className="kicker mb-4 font-semibold tracking-widest text-sky-400">
+            <p className="kicker mb-4 flex flex-wrap text-xs font-semibold tracking-widest text-sky-400 sm:text-sm">
               {"HELLO, I’M MOYNOL ISLAM MAHIM".split("").map((char, index) => (
                 <span
                   key={index}
@@ -174,13 +174,14 @@ export default function HomePage() {
                     animationDelay: `${index * 0.04}s, ${1 + index * 0.05}s`,
                   }}
                 >
-                  {char}
+                  {char === " " ? "\u00A0" : char}
                 </span>
               ))}
             </p>
 
-            <h1 className="max-w-3xl text-5xl font-semibold leading-[1.08] tracking-[-.055em] sm:text-6xl lg:text-[4.5rem]">
-              Building modern
+            {/* Responsive Heading */}
+            <h1 className="max-w-3xl break-words text-3xl font-semibold leading-[1.15] tracking-[-.04em] sm:text-5xl lg:text-[4.5rem]">
+              Building modern{" "}
               <br className="hidden sm:block" />
               web applications{" "}
               <span className="bg-gradient-to-r from-[#b9e9fa] via-[#cdbdff] to-[#f0b8df] bg-clip-text text-transparent">
@@ -188,63 +189,64 @@ export default function HomePage() {
               </span>
             </h1>
 
-            <p className="mt-6 max-w-xl text-base leading-8 text-slate-400 sm:text-lg">
+            <p className="mt-5 max-w-xl text-sm leading-7 text-slate-400 sm:text-base sm:leading-8">
               Full-Stack Web Developer and CSE student passionate about building
               responsive, user-friendly web applications and practical software
               solutions. Interested in AI-driven applications and data-informed
               market forecasting.
             </p>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <a href="#projects" className="btn btn-primary">
+            <div className="mt-7 flex flex-wrap gap-3">
+              <a href="#projects" className="btn btn-primary text-xs sm:text-sm">
                 Explore My Work <ArrowDown size={16} />
               </a>
 
-              <a href="/resume.pdf" download className="btn btn-secondary">
+              <a href="/resume.pdf" download className="btn btn-secondary text-xs sm:text-sm">
                 <ArrowDownToLine size={16} />
                 Download Résumé
               </a>
             </div>
 
-            <div className="mt-8 flex flex-wrap items-center gap-5">
+            {/* Social Links */}
+            <div className="mt-7 flex flex-wrap items-center gap-4 text-xs sm:text-sm">
               <a
-                className="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-sky-300"
+                className="inline-flex items-center gap-1.5 text-slate-300 transition hover:text-sky-300"
                 href="https://github.com/mahim157"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Github size={18} />
+                <Github size={16} />
                 GitHub
                 <ArrowUpRight size={13} />
               </a>
 
               <a
-                className="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-sky-300"
+                className="inline-flex items-center gap-1.5 text-slate-300 transition hover:text-sky-300"
                 href="https://www.linkedin.com/in/md-moynol-islam-mahim"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Linkedin size={18} />
+                <Linkedin size={16} />
                 LinkedIn
                 <ArrowUpRight size={13} />
               </a>
 
               <a
-                className="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-sky-300"
+                className="inline-flex items-center gap-1.5 text-slate-300 transition hover:text-sky-300"
                 href="https://www.facebook.com/ma.him.3040"
                 target="_blank"
                 rel="noreferrer"
               >
-                <Facebook size={18} />
+                <Facebook size={16} />
                 Facebook
                 <ArrowUpRight size={13} />
               </a>
 
               <a
-                className="inline-flex items-center gap-2 text-sm text-slate-300 transition hover:text-pink-300"
+                className="inline-flex items-center gap-1.5 text-slate-300 transition hover:text-pink-300"
                 href="mailto:moynolmahim58@gmail.com"
               >
-                <Mail size={17} />
+                <Mail size={16} />
                 Email
               </a>
             </div>
@@ -252,15 +254,15 @@ export default function HomePage() {
 
           {/* Profile card */}
 
-          <div className="mx-auto w-full max-w-[370px] lg:ml-auto">
+          <div className="mx-auto w-full max-w-[340px] sm:max-w-[370px] lg:ml-auto">
             <div className="profile-ring rounded-[34px]">
-              <div className="relative flex aspect-[4/4.6] flex-col items-center justify-center overflow-hidden rounded-[33px] bg-[#0c111d] p-8 text-center">
+              <div className="relative flex aspect-[4/4.6] flex-col items-center justify-center overflow-hidden rounded-[33px] bg-[#0c111d] p-6 text-center sm:p-8">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_20%,rgba(135,206,235,.16),transparent_48%)]" />
 
                 <div className="absolute bottom-0 left-0 h-40 w-40 rounded-full bg-pink-400/[.07] blur-[70px]" />
 
                 {/* Profile photo */}
-                <div className="relative h-36 w-36 shrink-0 overflow-hidden rounded-full border border-sky-200/30 bg-[#111B2E] shadow-[0_0_40px_rgba(130,169,232,0.16)] ring-4 ring-white/[.04]">
+                <div className="relative h-32 w-32 shrink-0 overflow-hidden rounded-full border border-sky-200/30 bg-[#111B2E] shadow-[0_0_40px_rgba(130,169,232,0.16)] ring-4 ring-white/[.04] sm:h-36 sm:w-36">
                   <Image
                     src="/images/profile1.png"
                     alt="Moynol Islam Mahim"
@@ -271,15 +273,15 @@ export default function HomePage() {
                   />
                 </div>
 
-                <p className="relative mt-6 text-xl font-semibold">
+                <p className="relative mt-5 text-lg font-semibold sm:text-xl">
                   Moynol Islam Mahim
                 </p>
 
-                <p className="relative mt-2 text-sm text-slate-400">
+                <p className="relative mt-1 text-xs text-slate-400 sm:text-sm">
                   Full-Stack Web Developer
                 </p>
 
-                <div className="relative mt-7 flex items-center gap-2 rounded-full border border-white/10 bg-white/[.025] px-4 py-2 text-xs text-slate-300">
+                <div className="relative mt-6 flex items-center gap-2 rounded-full border border-white/10 bg-white/[.025] px-3.5 py-1.5 text-xs text-slate-300">
                   <Sparkles size={14} className="text-[#cdbdff]" />
                   Turning ideas into digital solutions
                 </div>
@@ -293,7 +295,6 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-
       {/* ================= ABOUT ================= */}
 
       <section id="about" className="section border-t border-white/[.05]">
