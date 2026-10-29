@@ -203,7 +203,7 @@ export default function HomePage() {
 
               <a href="/resume.pdf" download className="btn btn-secondary text-xs sm:text-sm">
                 <ArrowDownToLine size={16} />
-                Download Résumé
+                Download Resume
               </a>
             </div>
 
